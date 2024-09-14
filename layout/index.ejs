@@ -72,3 +72,16 @@
   </ul>
 </section>
 <% } %>
+
+<% if (site.data.wip) { %>
+  <section id="wip">
+    <span class="h1"><%= __('WIP') %></span>
+    <ul class="project-list">
+      <% for(var obj in site.data.wip){ %>
+        <li class="project-item">
+          <%= site.data.wip[obj].name %>: <%- markdown(site.data.wip[obj].desc) %>
+        </li>
+      <% } %>
+    </ul>
+  </section>
+  <% } %>
